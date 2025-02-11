@@ -81,7 +81,17 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
   end
 
   })
+AddButton(Tab1o, {
 
+     Name = "Turbo Lite Hub",
+
+    Callback = function()
+
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/TurboLite/Script/refs/heads/main/Main.lua"))()
+
+  end
+
+  }) 
      AddButton(Tab1o, {
 
      Name = "Redz Hub",
