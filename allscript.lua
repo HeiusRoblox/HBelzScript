@@ -174,8 +174,8 @@ loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc61
 
     Callback = function()
 
-	  loadstring(game:HttpGet("https://raw.githubusercontent.com/Overgustx2/Main/refs/heads/main/BloxFruits_25.html"))()
 
+	loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/Min/refs/heads/main/MinBV"))() 
   end
 
   })
