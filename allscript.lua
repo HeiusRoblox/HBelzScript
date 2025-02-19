@@ -68,7 +68,16 @@ loadstring(game:HttpGet(("https://raw.githubusercontent.com/daucobonhi/Ui-Redz-V
 
 ------- BUTTON
 
+AddButton(Tab1o, {
 
+     Name = "H-Belz Hub",
+
+    Callback = function()
+
+	  loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/FreeScript.lua "))()
+  end
+
+  })
     AddButton(Tab1o, {
 
      Name = "Fix Lag Turbo Lite",
