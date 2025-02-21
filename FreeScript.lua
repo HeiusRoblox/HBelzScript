@@ -2642,6 +2642,7 @@ v25.Size = NumberSequence.new({
     NumberSequenceKeypoint.new(0, 0.1),
     NumberSequenceKeypoint.new(1, 0)
 });
+v23:Destroy()
 v25.Lifetime = NumberRange.new(0.5, 1);
 v25.Rate = 0;
 v25.Speed = NumberRange.new(5, 10);
