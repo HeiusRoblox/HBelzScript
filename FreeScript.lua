@@ -311,12 +311,8 @@ v5:Destroy();
 local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/realredz/RedzLibV5/refs/heads/main/Source.lua"))()
 local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
-    SubTitle = "",
-    TabWidth = 160,
-    Theme = "Aqua",
-    Acrylic = false,
-    Size = UDim2.fromOffset(500, 320),
-    MinimizeKey = Enum.KeyCode.End
+    SubTitle = "by HieuBeo",
+    SaveFolder = ""
 });
 local v16 = {
     Home = v15:AddTab({
