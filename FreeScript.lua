@@ -3,7 +3,7 @@ local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
     SubTitle = "",
     TabWidth = 160,
-    Theme = "Rose",
+    Theme = "Aqua",
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
@@ -13,7 +13,7 @@ local v16 = {
         Title = "Thông Tin"
     }),
     Main = v15:AddTab({
-        Title = "Cày"
+        Title = "Chung"
     }),
     Sea = v15:AddTab({
         Title = "Sự Kiện"
