@@ -2321,7 +2321,7 @@ v23.BorderSizePixel = 0;
 v23.Position = (0.103761353,0,0.214939028,0);
 v23.Size = UDim2.new(0, 58, 0, 55);
 v23.Draggable = true;
-v23.Image = "http://www.roblox.com/asset/?id=106674226087364";
+v23.Image = "rbxassetid://106674226087364";
 v24.Parent = v23;
 v24.CornerRadius = UDim.new(0, 12);
 v25.Parent = v23;
