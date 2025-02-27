@@ -74,7 +74,7 @@ AddButton(Tab1o, {
 
     Callback = function()
 
-	  loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/FreeScript.lua "))()
+	 loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/HBelzFree.lua"))()
   end
 
   })
@@ -112,7 +112,17 @@ AddButton(Tab1o, {
 
   end
 
-  })   
+  })
+AddButton(Tab1o, {
+
+     Name = "Rubu V3",
+
+    Callback = function()
+
+loadstring(game:HttpGet("https://raw.githubusercontent.com/LuaCrack/RubuRoblox/refs/heads/main/RubuBF"))()
+  end
+
+  })
 AddButton(Tab1o, {
 
      Name = "Quantum Onyx",
