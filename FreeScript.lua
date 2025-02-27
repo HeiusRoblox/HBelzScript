@@ -72,8 +72,6 @@ game:GetService("Players").LocalPlayer.Idled:connect(function()
     game:GetService("VirtualUser"):Button2Up(Vector2.new(0, 0), workspace.CurrentCamera.CFrame);
 end);
 
-local a=Instance.new("ScreenGui")local b=Instance.new("ImageButton")local c=Instance.new("UICorner")a.Parent=game.Players.LocalPlayer:WaitForChild("PlayerGui")a.ZIndexBehavior=Enum.ZIndexBehavior.Sibling;b.Parent=a;b.BackgroundColor3=Color3.fromRGB(255,255,255)b.BorderColor3=Color3.fromRGB(0,0,0)b.BorderSizePixel=0;b.Position=UDim2.new(0.103761353,0,0.214939028,0)b.Size=UDim2.new(0,58,0,55)b.Image="rbxassetid://110365071974573"c.Parent=b;local function d()local e=Instance.new('LocalScript',b)e.Parent.MouseButton1Click:Connect(function()game:GetService("VirtualInputManager"):SendKeyEvent(true,Enum.KeyCode.End,false,game)end)end;coroutine.wrap(d)()
-
 Sea1 = false;
 Sea2 = false;
 Sea3 = false;
@@ -2332,7 +2330,6 @@ v25.Size = NumberSequence.new({
     NumberSequenceKeypoint.new(0, 0.1),
     NumberSequenceKeypoint.new(1, 0)
 });
-v23:Destroy()
 v25.Lifetime = NumberRange.new(0.5, 1);
 v25.Rate = 0;
 v25.Speed = NumberRange.new(5, 10);
