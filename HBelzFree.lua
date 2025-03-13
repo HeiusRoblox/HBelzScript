@@ -6027,24 +6027,30 @@ local v87 = v16.Setting:AddToggle("ToggleAutoKen", {
     Description = "",
     Default = false
 });
-v87:OnChanged(function(v275)
-    _G.AutoKen = v275;
-    if v275 then
-        game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken", true);
-    else
-        game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken", false);
-    end
-end);
-v17.ToggleAutoKen:SetValue(false);
-spawn(function()
-    while wait() do
-        pcall(function()
-            if _G.AutoKen then
-                game:GetService("ReplicatedStorage").Remotes.CommE:FireServer("Ken", true);
+local player = game.Players.LocalPlayer
+local uis = game:GetService("UserInputService")
+
+local autoHakiEnabled = false
+
+v87:OnChanged(function(state)
+    autoHakiEnabled = state 
+
+  
+    if autoHakiEnabled then
+        spawn(function()
+            while autoHakiEnabled do
+                if player and player.Character then
+                    local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+                    if humanoid and not humanoid:FindFirstChild("ObservationHaki") then
+                        uis:SendKeyEvent(true, Enum.KeyCode.E, false, nil) 
+                        wait(0.2) 
+                    end
+                end
+                wait(0.1) 
             end
-        end);
+        end)
     end
-end);
+end)
 local v88 = v16.Setting:AddToggle("ToggleSaveSpawn", {
     Title = "Lưu Điểm Hồi Sinh",
     Description = "",
