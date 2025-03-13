@@ -1,9 +1,57 @@
 local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
+return {
+	Name = "ColorHBelz",
+	Accent = Color3.fromRGB(139, 98, 240),
+
+	AcrylicMain = Color3.fromRGB(30, 20, 60),
+	AcrylicBorder = Color3.fromRGB(100, 80, 190),
+	AcrylicGradient = ColorSequence.new(Color3.fromRGB(180, 80, 255), Color3.fromRGB(60, 150, 255)),
+	AcrylicNoise = 0.92,
+
+	TitleBarLine = Color3.fromRGB(120, 90, 200),
+	Tab = Color3.fromRGB(180, 140, 250),
+
+	Element = Color3.fromRGB(150, 110, 230),
+	ElementBorder = Color3.fromRGB(80, 60, 150),
+	InElementBorder = Color3.fromRGB(110, 90, 190),
+	ElementTransparency = 0.87,
+
+	ToggleSlider = Color3.fromRGB(150, 110, 230),
+	ToggleToggled = Color3.fromRGB(0, 0, 0),
+
+	SliderRail = Color3.fromRGB(150, 110, 230),
+
+	DropdownFrame = Color3.fromRGB(190, 160, 255),
+	DropdownHolder = Color3.fromRGB(70, 50, 140),
+	DropdownBorder = Color3.fromRGB(60, 40, 110),
+	DropdownOption = Color3.fromRGB(150, 110, 230),
+
+	Keybind = Color3.fromRGB(150, 110, 230),
+
+	Input = Color3.fromRGB(150, 110, 230),
+	InputFocused = Color3.fromRGB(30, 20, 70),
+	InputIndicator = Color3.fromRGB(190, 160, 255),
+
+	Dialog = Color3.fromRGB(70, 50, 140),
+	DialogHolder = Color3.fromRGB(50, 30, 100),
+	DialogHolderLine = Color3.fromRGB(45, 25, 90),
+	DialogButton = Color3.fromRGB(70, 50, 140),
+	DialogButtonBorder = Color3.fromRGB(120, 90, 200),
+	DialogBorder = Color3.fromRGB(100, 80, 180),
+	DialogInput = Color3.fromRGB(80, 60, 160),
+	DialogInputLine = Color3.fromRGB(200, 170, 255),
+
+	Text = Color3.fromRGB(240, 240, 240),
+	SubText = Color3.fromRGB(180, 180, 180),
+	Hover = Color3.fromRGB(150, 110, 230),
+	HoverChange = 0.04,
+}
+
 local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
     SubTitle = "",
     TabWidth = 160,
-    Theme = "Aqua",
+    Theme = "ColorHBelz",
     Acrylic = false,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
