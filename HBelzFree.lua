@@ -1,10 +1,10 @@
-local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentTrau"))();
+local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentKimPGaming"))();
 local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
     SubTitle = "",
     TabWidth = 160,
     Theme = "Darker",
-    Acrylic = false,
+    Acrylic = true,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
 });
