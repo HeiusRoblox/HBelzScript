@@ -1,5 +1,5 @@
 _G.Color = Color3.fromRGB(0, 0, 255)
-_G.Logo = 14714307716
+_G.Logo = 81572015393384
 
 do  
 	local ui = game:GetService("CoreGui"):FindFirstChild("UILibrary") 
