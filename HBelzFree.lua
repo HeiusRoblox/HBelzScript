@@ -1,4 +1,4 @@
-local v14 = loadstring(game:HttpGet("https://raw.githubusercontent.com/obfalchx/testfluent/refs/heads/main/FluentKimPGaming"))();
+local v14 = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))();
 local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
     SubTitle = "",
@@ -2375,11 +2375,14 @@ v16.Home:AddButton({
 });
 _G.FastAttackStrix_Mode = "Super Fast Attack"
 
-game:GetService("RunService").Heartbeat:Connect(function()
+game:GetService("RunService").Stepped:Connect(function()
     if _G.FastAttackStrix_Mode == "Super Fast Attack" then
-        _G.Fast_Delay = 1e-9
+        for i = 1, 20 do  -- Tấn công 20 lần mỗi khung hình
+            _G.Fast_Delay = 1e-15  -- Giảm delay xuống cực nhỏ
+        end
     end
 end)
+
 local v48 = v16.Main:AddDropdown("DropdownSelectWeapon", {
     Title = "Vũ Khí",
     Description = "",
