@@ -2373,18 +2373,13 @@ v16.Home:AddButton({
         setclipboard("https://www.facebook.com/share/15bozftW2e/");
     end
 });
-_G.FastAttackStrix_Mode = "Super Fast Attack";
-spawn(function()
-    while wait() do
-        if _G.FastAttackStrix_Mode then
-            pcall(function()
-                if (_G.FastAttackStrix_Mode == "Super Fast Attack") then
-                    _G.Fast_Delay = 1e-9;
-                end
-            end);
-        end
+_G.FastAttackStrix_Mode = "Super Fast Attack"
+
+game:GetService("RunService").Heartbeat:Connect(function()
+    if _G.FastAttackStrix_Mode == "Super Fast Attack" then
+        _G.Fast_Delay = 1e-9
     end
-end);
+end)
 local v48 = v16.Main:AddDropdown("DropdownSelectWeapon", {
     Title = "Vũ Khí",
     Description = "",
