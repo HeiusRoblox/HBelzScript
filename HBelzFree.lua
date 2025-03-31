@@ -3,7 +3,7 @@ local v15 = v14:CreateWindow({
     Title = "H-Belz Hub | Free Script",
     SubTitle = "",
     TabWidth = 160,
-    Theme = "Rose",
+    Theme = "Darker",
     Acrylic = true,
     Size = UDim2.fromOffset(500, 320),
     MinimizeKey = Enum.KeyCode.End
@@ -2377,8 +2377,8 @@ _G.FastAttackStrix_Mode = "Super Fast Attack"
 
 game:GetService("RunService").Stepped:Connect(function()
     if _G.FastAttackStrix_Mode == "Super Fast Attack" then
-        for i = 1, 100 do  -- Tấn công 20 lần mỗi khung hình
-            _G.Fast_Delay = 1e-20  -- Giảm delay xuống cực nhỏ
+        for i = 1, 100000 do  -- Tấn công 20 lần mỗi khung hình
+            _G.Fast_Delay = 1e-30  -- Giảm delay xuống cực nhỏ
         end
     end
 end)
