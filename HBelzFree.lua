@@ -2375,13 +2375,21 @@ v16.Home:AddButton({
 });
 _G.FastAttackStrix_Mode = "Super Fast Attack"
 
-game:GetService("RunService").Stepped:Connect(function()
-    if _G.FastAttackStrix_Mode == "Super Fast Attack" then
-        for i = 1, 100000 do  -- Tấn công 20 lần mỗi khung hình
-            _G.Fast_Delay = 1e-30  -- Giảm delay xuống cực nhỏ
+-- Tạo 1000 luồng chạy liên tục không delay
+for i = 1, 1000 do
+    task.spawn(function()
+        while true do
+            if _G.FastAttackStrix_Mode == "Super Fast Attack" then
+                -- Thay đổi giá trị delay siêu nhỏ nhiều lần liên tiếp (tăng hiệu ứng nhanh)
+                for j = 1, 1000 do
+                    _G.Fast_Delay = 1e-323  -- Đây là giá trị nhỏ nhất Lua cho phép trước khi chạm giới hạn 0
+                end
+            end
+            task.wait()
         end
-    end
-end)
+    end)
+end
+
 
 local v48 = v16.Main:AddDropdown("DropdownSelectWeapon", {
     Title = "Vũ Khí",
