@@ -10247,7 +10247,7 @@ v74:Button("Kaitun Cap", function(v471)
 	for v863, v864 in pairs(v472) do
 		if (v495[v864] and (game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"   .. v864 , true) == 1)) then
 			local v1663 = Instance.new("ImageLabel", v496);
-			v1663.Image = "rbxassetid://120225267909374";
+			v1663.Image = "";
 			v1663.ImageRectSize = Vector2.new(100, 100);
 			v1663.ImageRectOffset = v495[v864] * 100 ;
 		end
