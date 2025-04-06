@@ -3171,9 +3171,9 @@ local v86 = {
 	"Normal Attack",
 	"Fast Attack",
 	"Super Attack",
-	"Xeter Attack"
+	"H-Belz Attack"
 };
-v63 = "Xeter Attack";
+v63 = "H-Belz Attack";
 v68:Dropdown("Fast Attack Delay", v86, function(v377)
 	v63 = v377;
 end);
@@ -3187,8 +3187,8 @@ spawn(function()
 					v63 = 0.07;
 				elseif (v63 == "Super Attack") then
 					v63 = 0.04;
-				elseif (v63 == "Xeter Attack") then
-					v63 = 0.02;
+				elseif (v63 == "H-Belz Attack") then
+					v63 = 0.00002;
 				end
 			end);
 		end
