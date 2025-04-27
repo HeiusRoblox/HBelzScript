@@ -3473,8 +3473,8 @@ local SelectFarm = Tabs.Main:AddDropdown("SelectFarmMode", {
     Default = 1,
 })
 SelectFarm:SetValue("Farm Level")
-SelectFarm:OnChanged(function(Value)
-	FarmMode = Value
+SelectFarm:OnChanged(function(v)
+	_G.FarmMode = v
 end)
 
 local SelectWeapons = Tabs.Main:AddDropdown("Select Weapon", {
@@ -3826,13 +3826,13 @@ _G.AutoFarm = value
     if value then
         task.spawn(function()
             while wait() do
-                if FarmMode == "Farm Level" then
+                if _G.FarmMode == "Farm Level" then
                     AutoFarmLevel()
-                elseif FarmMode == "Farm Near Mobs" then
+                elseif _G.FarmMode == "Farm Near Mobs" then
                     AutoFarmNearMobs()
-                elseif FarmMode == "Farm Katakuri" then
+                elseif _G.FarmMode == "Farm Katakuri" then
                     AutoFarmKatakuri()
-                elseif FarmMode == "Farm Bone" then
+                elseif _G.FarmMode == "Farm Bone" then
                     AutoFarmBone()
                 end
             end
