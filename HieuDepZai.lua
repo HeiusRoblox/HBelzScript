@@ -3472,11 +3472,6 @@ local SelectFarm = Tab:AddDropdown("SelectFarmMode", {
     Multi = false,
     Default = 1,
 })
-SelectFarm:SetValue("Farm Level")
-SelectFarm:OnChanged(function(Value)
-	FarmMode = Value
-end)
-
 
 
 local SelectWeapons = Tab:AddDropdown("Select Weapon", {
