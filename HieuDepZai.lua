@@ -5,7 +5,7 @@ local Window = Fluent:CreateWindow({
     SubTitle = "Version 2",
     TabWidth = 160,
     Size = UDim2.fromOffset(530, 350),
-    Acrylic = true, -- The blur may be detectable, setting this to false disables blur entirely
+    Acrylic = true, -- The blurmay be detectable, setting this to false disables blur entirely
     Theme = "Darker",
     MinimizeKey = Enum.KeyCode.End -- Used when theres no MinimizeKeybind
 })
@@ -3858,24 +3858,3 @@ local StartFarm = Tabs.Main:AddToggle("Start Farm", {
 	Description = "",
 	Default = false
 })
-StartFarm:OnChanged(function(value)
-_G.AutoFarm = value
-      StopTween(_G.AutoFarm)		
-    if value then
-        task.spawn(function()
-            while wait() do
-                if FarmMode == "Farm Level" then
-                    AutoFarmLevel()
-                elseif FarmMode == "Farm Near Mobs" then
-                    AutoFarmNearMobs()
-                elseif FarmMode == "Farm Katakuri" then
-                    AutoFarmKatakuri()
-                elseif FarmMode == "Farm Bone" then
-                    AutoFarmBone()
-                end
-            end
-        end)
-        else
-        _G.AutoFarm = false
-    end
-end)
