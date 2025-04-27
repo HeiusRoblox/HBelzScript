@@ -3530,7 +3530,7 @@ SelectWeapons:SetValue("Melee")
      		end)
      	end
     end)
-function AutoFarmLevel()
+local function AutoFarmLevel()
   spawn(function()
         while wait() do
             if _G.AutoFarm then
@@ -3628,7 +3628,7 @@ function AutoFarmLevel()
             end
         end
     end)
-function AutoFarmNearMobs()
+local function AutoFarmNearMobs()
 spawn(function()
     while wait() do
         if _G.AutoNear then
@@ -3661,7 +3661,7 @@ spawn(function()
                 end
              end
           end)
-function AutoFarmBone()
+local function AutoFarmBone()
 spawn(function()
         while wait() do 
             local boneframe = CFrame.new(-9508.5673828125, 142.1398468017578, 5737.3603515625)
@@ -3723,43 +3723,7 @@ spawn(function()
         end
     end)     
     
-        AutoFarm:Toggle("Seperator Hallow Scythe", false,function(value)         
-     	_G.Hallow = value 
-         StopTween(_G.Hallow)
-       end)
-       
-       spawn(function()
-    while wait() do
-        if _G.Hallow then
-            pcall(function()
-                if game:GetService("Workspace").Enemies:FindFirstChild("Soul Reaper") then
-                    for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                        if string.find(v.Name , "Soul Reaper") then
-                            repeat task.wait()
-                                EquipWeapon(_G.SelectWeapon)
-                                AutoHaki()
-                                v.HumanoidRootPart.Size = Vector3.new(50,50,50)
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
-                                game:GetService("VirtualUser"):CaptureController()
-                                game:GetService("VirtualUser"):Button1Down(Vector2.new(1280, 670))
-                                v.HumanoidRootPart.Transparency = 1
-                            until v.Humanoid.Health <= 0 or _G.Hallow == false
-                        end
-                    end
-                elseif game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Hallow Essence") or game:GetService("Players").LocalPlayer.Character:FindFirstChild("Hallow Essence") then
-                    repeat TP1(CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125)) wait() until (CFrame.new(-8932.322265625, 146.83154296875, 6062.55078125).Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8                        
-                    EquipWeapon("Hallow Essence")
-                else
-                    if game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper") then
-                        TP1(game:GetService("ReplicatedStorage"):FindFirstChild("Soul Reaper").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                   
-                       end
-                    end
-                end)
-             end
-         end
-     end)
-function AutoFarmKatakuri()
+local function AutoFarmKatakuri()
     local CakePos = CFrame.new(-2130.80712890625, 69.95634460449219, -12327.83984375)
     local Plsmon = game:GetService("Workspace").Enemies
      task.spawn(function()
