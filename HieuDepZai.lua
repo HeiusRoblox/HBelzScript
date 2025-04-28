@@ -3464,7 +3464,7 @@ local v529 = v16.Main:AddParagraph({
     end);
 
 --- Tabs Main
-local SelectFarm = Tab:AddDropdown("SelectModeFarm", {
+local SelectFarm = Tabs.Main:AddDropdown("SelectModeFarm", {
     Title = "Select Mode Farm",
     Description = "",
     Values = {"Farm Level", "Farm Near Mobs", "Farm Katakuri", "Farm Bone"}
@@ -3473,7 +3473,7 @@ local SelectFarm = Tab:AddDropdown("SelectModeFarm", {
 })
 SelectFarm:OnChanged(function(Value)
 end)    
-local SelectWeapon = Tab:AddDropdown("SelectWeaponDropdown", {
+local SelectWeapon = Tabs.Main:AddDropdown("SelectWeaponDropdown", {
     Title = "Select Weapon",
     Description = "",
     Values = {"Melee", "Sword", "Gun", "Fruit",}
@@ -3810,7 +3810,7 @@ function AutoFarmKatakuri()
         end
     end
 end)
-local StartFarm = Tab:AddToggle("Start Farm", 
+local StartFarm = Tabs.Main:AddToggle("Start Farm", 
 {
     Title = "Start Farm", 
     Description = "",
