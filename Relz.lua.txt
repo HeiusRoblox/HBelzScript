@@ -15,15 +15,15 @@ Window:EditOpenButton({
 	Draggable = false
 });
 local Tabs = {
+OthersTab = Window:Tab({
+		Title = "Others",
+		Icon = "inbox",
+		Desc = "Farming Section"
+	}),
 	MainTab = Window:Tab({
 		Title = "Main",
 		Icon = "house",
 		Desc = "Main Section"
-	}),
-	OthersTab = Window:Tab({
-		Title = "Others",
-		Icon = "inbox",
-		Desc = "Farming Section"
 	}),
 	ItemsTab = Window:Tab({
 		Title = "Items",
