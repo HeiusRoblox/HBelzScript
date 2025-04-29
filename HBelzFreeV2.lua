@@ -1,14 +1,5 @@
-local SystemKey = (loadstring(game:HttpGet("https://relzhub.farrghii.com/config/keysystem.lua")))();
+local Keysystem = (loadstring(game:HttpGet("https://relzhub.farrghii.com/config/keysystem.lua")))();
 local WindUI = (loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI")))();
-local fakeKey = "HieuDz"
-local Keysystem = {
-    GetUserKey = function()
-        return fakeKey
-    end,
-    GetKeyUrl = function()
-        return "https://your-key-url.com"
-    end
-}
 local Window = WindUI:CreateWindow({
 	Title = "Heius Roblox [ Version 2 ]",
 	Author = "Blox Fruits",
@@ -18,15 +9,8 @@ local Window = WindUI:CreateWindow({
 	Theme = "Dark",
 	SideBarWidth = 190,
 	HasOutline = false,
-	KeySystem = {
-        Key = {
-            fakeKey,
-            Keysystem:GetUserKey()
-        },
-        Note = "",
-        URL = tostring(Keysystem:GetKeyUrl()),
-        SaveKey = true
-    }
+	KeySystem = nil
+});
 Window:EditOpenButton({
 	Title = "Open",
 	CornerRadius = UDim.new(0, 10),
