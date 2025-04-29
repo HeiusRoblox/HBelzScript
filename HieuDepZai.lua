@@ -3526,7 +3526,7 @@ task.spawn(function()
 local function AutoFarmLevel()
   spawn(function()
         while wait() do
-            if _G.AutoFarm then
+            if StartFarm.value then
                 pcall(function()
                     local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
                     CheckQuest()
@@ -3621,10 +3621,10 @@ local function AutoFarmLevel()
             end
         end
     end)
-local function AutoFarmNearMobs()
+function AutoFarmNearMobs()
 spawn(function()
     while wait() do
-        if _G.AutoNear then
+        if StartFarm.value then
             pcall(function()
                 for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
                     if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
@@ -3654,11 +3654,11 @@ spawn(function()
                 end
              end
           end)
-local function AutoFarmBone()
+function AutoFarmBone()
 spawn(function()
         while wait() do 
             local boneframe = CFrame.new(-9508.5673828125, 142.1398468017578, 5737.3603515625)
-            if _G.FarmBone and World3 then
+            if StartFarm.value and World3 then
             pcall(function()
                     if BypassTP then
                         if (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - boneframe.Position).Magnitude > 2000 then
@@ -3721,7 +3721,7 @@ function AutoFarmKatakuri()
     local Plsmon = game:GetService("Workspace").Enemies
      task.spawn(function()
     while task.wait() do
-        if _G.FarmCake then
+        if StartFarm.value then
             pcall(function()
                 if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
                     for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3740,7 +3740,7 @@ function AutoFarmKatakuri()
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(4, 10, 10))
                                     end
                                     NeedAttacking = true
-                                until not _G.FarmCake or not v.Parent or v.Humanoid.Health <= 0
+                                until not StartFarm.value or not v.Parent or v.Humanoid.Health <= 0
                                 wait(1)
                             end
                         end
@@ -3779,7 +3779,7 @@ function AutoFarmKatakuri()
                                         elseif v.Name == "Head Baker" then
                                             Bring(v.Name, CFrame.new(-2151.37793, 51.0095749, -13033.3975, -0.996587753, 0, 0.0825396702, 0, 1, 0, -0.0825396702, 0, -0.996587753))
                                         end
-                                    until not _G.FarmCake or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]")
+                                    until not StartFarm.value or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince [Lv. 2300] [Raid Boss]")
                                     DamageAura = false
                                 end
                             end
@@ -3816,8 +3816,7 @@ local StartFarm = Tabs.Main:AddToggle("Start Farm",
     Description = "",
     Default = false
     Callback = function(value)
-_G.AutoFarm = value
-      StopTween(_G.AutoFarm)		
+      StopTween(value)		
     if value then
         task.spawn(function()
             while wait() do
@@ -3832,8 +3831,6 @@ _G.AutoFarm = value
                 end
             end
         end)
-        else
-        _G.AutoFarm = false
     end
 end)
 )}
