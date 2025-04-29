@@ -1,4 +1,4 @@
-local Keysystem = (loadstring(game:HttpGet("https://relzhub.farrghii.com/config/keysystem.lua")))();
+local SystemKey = (loadstring(game:HttpGet("https://relzhub.farrghii.com/config/keysystem.lua")))();
 local WindUI = (loadstring(game:HttpGet("https://tree-hub.vercel.app/api/UI/WindUI")))();
 local fakeKey = "HieuDz"
 local Keysystem = {
