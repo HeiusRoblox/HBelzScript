@@ -110,54 +110,6 @@ local Tabs = {
 		Desc = "Misc Section"
 	})
 };
--- Toggle UI bằng nút ảnh kéo được
-local isUIVisible = true
-
--- Tạo GUI nút toggle
-local ImageToggleGui = Instance.new("ScreenGui")
-ImageToggleGui.Name = "UIToggleButton"
-ImageToggleGui.ResetOnSpawn = false
-ImageToggleGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-ImageToggleGui.Parent = game:GetService("CoreGui")
-
--- Frame bao nút để kéo
-local DragFrame = Instance.new("Frame")
-DragFrame.Size = UDim2.new(0, 40, 0, 40)
-DragFrame.Position = UDim2.new(0, 10, 0, 80)
-DragFrame.BackgroundTransparency = 1
-DragFrame.Active = true
-DragFrame.Draggable = true
-DragFrame.Parent = ImageToggleGui
-
--- Nút ảnh
-local ImageButton = Instance.new("ImageButton")
-ImageButton.Size = UDim2.new(1, 0, 1, 0)
-ImageButton.Position = UDim2.new(0, 0, 0, 0)
-ImageButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-ImageButton.BorderSizePixel = 0
-ImageButton.Image = "rbxassetid://106674226087364" -- thay ảnh tùy ý
-ImageButton.Parent = DragFrame
-
--- Bo góc
-local UICorner = Instance.new("UICorner")
-UICorner.CornerRadius = UDim.new(1, 0)
-UICorner.Parent = ImageButton
-
--- Hàm bật/tắt UI
-local function toggleUI()
-	for _, gui in pairs(game:GetService("CoreGui"):GetChildren()) do
-		if gui.Name == "HBelzV2" then
-			gui.Enabled = isUIVisible
-		end
-	end
-end
-
--- Xử lý khi nhấn nút
-ImageButton.MouseButton1Click:Connect(function()
-	isUIVisible = not isUIVisible
-	toggleUI()
-end)
-
 Window:SelectTab(1);
 _G.Settings = {
 	Main = {
