@@ -64,11 +64,10 @@ local Window = Fluent:CreateWindow({
     MinimizeKey=Enum.KeyCode.End
 })
 local Tabs = {
-    Info=Window:AddTab({ Title="Tab Infomation" }),
     Shop=Window:AddTab({ Title="Tab Shop" }),
     Status=Window:AddTab({ Title="Tab Status And Server" }),
     Player=Window:AddTab({ Title="Tab Local Player" }),
-    Setting=Window:AddTab({ Title="Tab Setting" }),
+    Setting=Window:AddTab({ Title="Tab Setting Farm" }),
     Main=Window:AddTab({ Title="Tab Farming" }),
     Item=Window:AddTab({ Title="Tab Items Farm" }),
     Fruit=Window:AddTab({ Title="Tab Fruit And Raid" }),
