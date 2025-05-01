@@ -1568,7 +1568,7 @@ v29.BorderSizePixel = 0;
 v29.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0);
 v29.Size = UDim2.new(0, 53.5, 0, 53.5);
 v29.BackgroundTransparency = 1;
-v29.Image = "rbxassetid://123448871674913";
+v29.Image = "rbxassetid://106674226087364";
 v29.Draggable = true;
 v29.MouseButton1Click:Connect(function()
 	game:GetService("VirtualInputManager"):SendKeyEvent(true, 305, false, game);
@@ -3512,7 +3512,7 @@ if _G.FastAttack then
 		return v1766;
 	end)();
 end
-local v52 = v3:Window("HBelz Hub-Blox Fruits [ Free ]", "");
+local v52 = v3:Window("HBelz Hub [ Free ]", "");
 local v53 = v52:T("Tab Status", "rbxassetid://10734984606");
 local v54 = v52:T("Tab General", "rbxassetid://10723407389");
 local v55 = v52:T("Setting Other", "rbxassetid://10734950309");
@@ -3668,7 +3668,7 @@ local v72 = {
 	"Normal Attack",
 	"Fast Attack",
 	"Super Attack",
-	"Xeter Attack"
+	"HBelz Attack"
 };
 _G.FastAttackDelay = "Normal Attack";
 v54:Dropdown("Fast Attack Delay", v72, function(v405)
@@ -3684,7 +3684,7 @@ spawn(function()
 					_G.FastAttackDelay = 0.07;
 				elseif (_G.FastAttackDelay == "Super Attack") then
 					_G.FastAttackDelay = 0.04;
-				elseif (_G.FastAttackDelay == "Xeter Attack") then
+				elseif (_G.FastAttackDelay == "HBelz Attack") then
 					_G.FastAttackDelay = 0;
 				end
 			end);
