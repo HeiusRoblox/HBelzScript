@@ -1326,7 +1326,7 @@ print("--[[Loaded UI]]--")
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
     Title = "Banana Cat Hub-Blox Fruit [ Premium ]",
-    SubTitle = "by Heius",
+    SubTitle = "by Obii",
     TabWidth = 155,
     Size = UDim2.fromOffset(500, 350),
     Acrylic = false, 
