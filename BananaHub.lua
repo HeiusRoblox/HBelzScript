@@ -2584,7 +2584,7 @@ local Players = game:GetService("Players")
 local Workspace = game:GetService("Workspace")
 local LocalPlayer = Players.LocalPlayer
 spawn(function()
-    while task.wait(0.1) do
+    while task.wait(4) do
         pcall(function()
             CheckQuest()
             local enemies = Workspace.Enemies:GetChildren()
