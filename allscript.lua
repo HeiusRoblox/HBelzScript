@@ -150,7 +150,7 @@ loadstring(game:HttpGet("https://raw.githubusercontent.com/kimprobloxdz/Banana-F
 end
 })
 BF:AddButton({"Banana Hub [ by HeiusRoblox-HieuYeager ]", function()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/BananaHub.lua"))()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/HBelzV4Banana.lua"))()
 end
 })
 --- Grow A Garden
