@@ -2733,7 +2733,7 @@ Main:AddParagraph({
 })
 Dropdown = Main:AddDropdown("DropdownFarm", {
     Title = "Select Method Farm",
-    Values = {"Farm Level", "Farm Bone", "Farm Katakuri"},
+    Values = {"Farm Level", "Farm Bone", "Farm Katakuri", "Farm Tyrant of The Skies"},
     Multi = false,
 })
 Dropdown:SetValue("Farm Level")
@@ -2991,7 +2991,7 @@ local TyrantoftheSkies = CFrame.new(-16194.0048828125, 155.21844482421875, 1420.
     local Plsmon = game:GetService("Workspace").Enemies
 spawn(function()
     while wait(0.1) do
-        if FarmMode == "Farm Tyrant of the Skies" and getgenv().AutoFarm and World3 then
+        if FarmMode == "Farm Tyrant of The Skies" and getgenv().AutoFarm and World3 then
             pcall(function()
                 if game:GetService("Workspace").Enemies:FindFirstChild("Tyrant of the Skies") then
                     for i, v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
@@ -3034,7 +3034,6 @@ spawn(function()
                                         v.Head.CanCollide = false
                                         topos(v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
                                     until not getgenv().SelectWeapon or not v.Parent or v.Humanoid.Health <= 0 or game:GetService("Workspace").Map.CakeLoaf.BigMirror.Other.Transparency == 0 or game:GetService("ReplicatedStorage"):FindFirstChild("Tyrant of the Skies [Lv. 2600] [Raid Boss]") or game:GetService("Workspace").Enemies:FindFirstChild("Tyrant of the Skies [Lv. 2600] [Raid Boss]")
-                                    DamageAura = false
                                 end
                             end
                         end
