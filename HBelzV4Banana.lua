@@ -3251,7 +3251,7 @@ spawn(function()
     end
 end)
 local IgnoreAttackKatakuri = false
-Tabs.MainTab:AddToggle("IgnoreAttackKatakuri", {
+Main:AddToggle("IgnoreAttackKatakuri", {
     Title = "Ignore Attack Katakuri",
     Description = "",
     Default = false,
