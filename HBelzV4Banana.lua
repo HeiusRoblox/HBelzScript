@@ -3088,7 +3088,6 @@ spawn(function()
         end
     end
 end)
-    
 Toggle = Main:AddToggle("Toggle", { Title = "Start Farm", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFarm = Value
