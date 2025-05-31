@@ -2718,7 +2718,7 @@ spawn(function()
         end)
     end
 end)
-ChooseSkill = Window:AddTab({ Title = "Setting Hold,\nand Select Skill", Icon = "" })
+ChooseSkill = Window:AddTab({ Title = "Setting Hold\nand Select Skill", Icon = "" })
 ChooseSkill:AddParagraph({
     Title = "Setting Sea Event",
     Content = string.rep("-", 21)
@@ -3104,7 +3104,7 @@ spawn(function()
                 if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
                     if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
                         for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
-                            if getgenv().AutoFarm and not IgnoreAttackKatakuri and v.Name == "Cake Prince" then
+                            if getgenv().AutoFarm and v.Name == "Cake Prince" then
                                 and v:FindFirstChild("HumanoidRootPart") 
                                 and v:FindFirstChild("Humanoid") 
                                 and v.Humanoid.Health > 0 then                                
@@ -3242,15 +3242,6 @@ spawn(function()
     end
 end)
 
-local IgnoreAttackKatakuri = false
-
-Main:AddToggle("IgnoreAttackKatakuri", {
-    Title = "Ignore Attack Katakuri",
-    Default = false,  -- mặc định false
-    Callback = function(v)
-        IgnoreAttackKatakuri = v  -- cập nhật theo toggle
-    end
-})
 Toggle = Main:AddToggle("Toggle", { Title = "Start Farm", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFarm = Value
