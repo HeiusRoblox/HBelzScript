@@ -3018,11 +3018,11 @@ end)
 BonePos = CFrame.new(-9506.234375, 172.130615234375, 6117.0771484375)
 spawn(function()
     while wait(0.1) do
-			if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
-    GetBoneQuest()
-			end
         if FarmMode == "Farm Bone" and getgenv().AutoFarm and World3 then
             pcall(function()
+						if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
+    GetBoneQuest()
+						end
                 local enemies = game:GetService("Workspace").Enemies:GetChildren()
                 local foundEnemy = false
                 for _, v in pairs(enemies) do
