@@ -2718,7 +2718,7 @@ spawn(function()
         end)
     end
 end)
-ChooseSkill = Window:AddTab({ Title = "Setting Hold\nand Select Skill", Icon = "" })
+ChooseSkill = Window:AddTab({ Title = "Setting Hold,\nand Select Skill", Icon = "" })
 ChooseSkill:AddParagraph({
     Title = "Setting Sea Event",
     Content = string.rep("-", 21)
