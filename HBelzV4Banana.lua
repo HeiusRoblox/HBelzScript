@@ -3018,6 +3018,9 @@ end)
 BonePos = CFrame.new(-9506.234375, 172.130615234375, 6117.0771484375)
 spawn(function()
     while wait(0.1) do
+			if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
+    GetBoneQuest()
+			end
         if FarmMode == "Farm Bone" and getgenv().AutoFarm and World3 then
             pcall(function()
                 local enemies = game:GetService("Workspace").Enemies:GetChildren()
@@ -3100,6 +3103,9 @@ spawn(function()
     while task.wait(0.1) do
         if FarmMode == "Farm Katakuri" and getgenv().AutoFarm and World3 then
             pcall(function()
+						if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
+    GetCakeQuest()
+						end
                 game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner")                
                 if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
                     if game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
@@ -3240,6 +3246,7 @@ spawn(function()
         end
     end
 end)
+
 local IgnoreAttackKatakuri = false
 
 Main:AddToggle("IgnoreAttackKatakuri", {
@@ -3249,6 +3256,72 @@ Main:AddToggle("IgnoreAttackKatakuri", {
         IgnoreAttackKatakuri = v 
     end
 })
+local KataBoneQuestToggle = true
+Main:AddToggle("KataBoneQuestToggl", {
+    Title = "Get Quest Farm [Katakuri or Bone]",
+    Description = "",
+    Default = false
+    Callback = function(v)
+    KataBoneQuestToggle = v
+  end
+})
+local BoneQuestPosition = CFrame.new(-9515.75, 174.85, 6079.4)
+function GetBoneQuest()
+	pcall(function()
+		BonesBring = false
+		local player = game.Players.LocalPlayer
+		local rootPart = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+		if not rootPart then return end
+		local questGui = player.PlayerGui.Main.Quest
+		if questGui.Visible == false then
+			if BypassTP then
+				local distance = (rootPart.Position - BoneQuestPosition.Position).Magnitude
+				if distance > 3500 then
+					BTP(BoneQuestPosition)
+				else
+					topos(BoneQuestPosition)
+				end
+			else
+				topos(BoneQuestPosition)
+			end
+			if (BoneQuestPosition.Position - rootPart.Position).Magnitude <= 3 then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", "HauntedQuest2", 1)
+			end
+		end
+	end)
+end
+local CakeQuestPosition = CFrame.new(-2021.32, 37.7982, -12028.72)
+
+function GetCakeQuest()
+	pcall(function()
+		local player = game.Players.LocalPlayer
+		local root = player.Character and player.Character:FindFirstChild("HumanoidRootPart")
+		if not root then return end
+
+		local QuestGui = player.PlayerGui.Main.Quest
+		local currentQuestName = player.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
+		if QuestGui.Visible and not string.find(currentQuestName, "Cookie Crafter") then
+			CakeBring = false
+			game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
+		end
+		if QuestGui.Visible == false then
+			CakeBring = false
+			if BypassTP then
+				if (root.Position - CakeQuestPosition.Position).Magnitude > 3500 then
+					BTP(CakeQuestPosition)
+				else
+					topos(CakeQuestPosition)
+				end
+			else
+				topos(CakeQuestPosition)
+			end
+
+			if (root.Position - CakeQuestPosition.Position).Magnitude <= 3 then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("StartQuest", "CakeQuest1", 1)
+			end
+		end
+	end)
+end
 Toggle = Main:AddToggle("Toggle", { Title = "Start Farm", Default = false })
 Toggle:OnChanged(function(Value)
     getgenv().AutoFarm = Value
