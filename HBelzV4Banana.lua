@@ -3259,7 +3259,7 @@ spawn(function()
                         local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
                         if distance <= _G.DistanceAuraFarm then
                             repeat
-                                wait(_G.Fast_Delay)
+                                wait(0.1)
                                 AutoHaki()
                                 EquipWeapon(_G.SelectWeapon)
                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
