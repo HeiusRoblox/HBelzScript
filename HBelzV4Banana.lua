@@ -2911,7 +2911,7 @@ Main:AddParagraph({
 })
 Dropdown = Main:AddDropdown("DropdownFarm", {
     Title = "Select Method Farm",
-    Values = {"Farm Level", "Farm Bone", "Farm Katakuri", "Farm Tyrant of The Skies", "Aura Farm"},
+    Values = {"Farm Level", "Farm Bone", "Farm Katakuri", "Farm Tyrant of The Skies"},
     Multi = false,
 })
 Dropdown:SetValue("Farm Level")
@@ -3242,48 +3242,7 @@ spawn(function()
         end
     end
 end)
-spawn(function()
-    while wait() do
-        if while wait(0.1) do
-        if FarmMode == "Aura Farm" and getgenv().AutoFarm then
-            pcall(function()
-                for _, v in pairs(game.Workspace.Enemies:GetChildren()) do
-                    if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                        local distance = (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position).Magnitude
-                        if distance <= _G.DistanceAuraFarm then
-                            repeat
-                                wait(0.1)
-                                AutoHaki()
-                                EquipWeapon(_G.SelectWeapon)
-                                topos(v.HumanoidRootPart.CFrame * CFrame.new(0, 30, 0))
-                                v.HumanoidRootPart.Size = Vector3.new(60, 60, 60)
-                                v.HumanoidRootPart.Transparency = 1
-                                v.Humanoid.JumpPower = 0
-                                v.Humanoid.WalkSpeed = 0
-                                v.HumanoidRootPart.CanCollide = false
-                                FarmPos = v.HumanoidRootPart.CFrame
-                                MonFarm = v.Name
-                            until not getgenv().AutoFarm or not v.Parent or v.Humanoid.Health <= 0 or not game.Workspace.Enemies:FindFirstChild(v.Name)
-                           end
-                        end
-                     end
-                  end)
-                end
-             end
-          end)
-_G.DistanceAuraFarm = 5000
-Main:AddSlider("DistanceAuraFarm", 
-{
-    Title = "Distance Aura Farm",
-    Description = "",
-    Default = 700,
-    Min = 200,
-    Max = 5000,
-    Rounding = 1,
-    Callback = function(v)
-        _G.DistanceAuraFarm = v
-    end
-})
+
 local IgnoreAttackKatakuri = false
 Main:AddToggle("IgnoreAttackKatakuri", {
     Title = "Ignore Attack Katakuri",
