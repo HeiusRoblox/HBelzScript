@@ -3024,7 +3024,6 @@ spawn(function()
             if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
     GetBoneQuest()
 end
-wait(5)
                 local enemies = game:GetService("Workspace").Enemies:GetChildren()
                 local foundEnemy = false
                 for _, v in pairs(enemies) do
@@ -3107,7 +3106,7 @@ spawn(function()
             pcall(function()
             if KataBoneQuestToggle and (game.Players.LocalPlayer.PlayerGui.Main.Quest.Visible == false) then
     GetCakeQuest()
-    wait(3)
+    
 end
                 game.ReplicatedStorage.Remotes.CommF_:InvokeServer("CakePrinceSpawner")                
                 if game.ReplicatedStorage:FindFirstChild("Cake Prince") or game:GetService("Workspace").Enemies:FindFirstChild("Cake Prince") then
