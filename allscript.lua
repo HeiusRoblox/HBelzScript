@@ -80,6 +80,10 @@ BF:AddButton({"HBelz Hub V2", function()
   loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/HBelzFreeV2.lua"))()
 end
 })
+BF:AddButton({"HBelz Hub V3", function()
+  loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/HBelzFreeV3.lua"))()
+end
+})
 BF:AddButton({"W-Azure Hub", function()
   loadstring(game:HttpGet("https://api.luarmor.net/files/v3/loaders/3b2169cf53bc6104dabe8e19562e5cc2.lua"))()
 end
@@ -149,7 +153,7 @@ BF:AddButton({"Banana Hub [ by Kimp ]", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/kimprobloxdz/Banana-Free/refs/heads/main/Protected_5609200582002947.lua.txt"))()
 end
 })
-BF:AddButton({"Banana Hub [ by HeiusRoblox-HieuYeager ]", function()
+BF:AddButton({"Banana Hub < HBelz V4 >[ by HeiusRoblox-HieuYeager ]", function()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/HeiusRoblox/HBelzScript/refs/heads/main/HBelzV4Banana.lua"))()
 end
 })
