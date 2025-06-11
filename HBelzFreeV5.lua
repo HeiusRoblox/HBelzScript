@@ -189,23 +189,13 @@ repeat
 until player.Team
 hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Death), function() end)
 hookfunction(require(game:GetService("ReplicatedStorage").Effect.Container.Respawn), function() end)
---- Make Hiru Theme
-Fluent.ThemeManager:AddTheme("HiruTheme", {
-    FontColor = Color3.fromRGB(20, 20, 20),
-    MainBackgroundColor = Color3.fromRGB(255, 150, 100), 
-    AccentColor = Color3.fromRGB(180, 100, 255), 
-    BackgroundColor = Color3.fromRGB(230, 100, 160),
-    LightBackgroundColor = Color3.fromRGB(255, 180, 140),
-    DarkBackgroundColor = Color3.fromRGB(190, 90, 150),
-    OutlineColor = Color3.fromRGB(255, 120, 160),
-    InlineColor = Color3.fromRGB(180, 80, 180),
-})
+
 local Fluent = loadstring(game:HttpGet("https://github.com/dawid-scripts/Fluent/releases/latest/download/main.lua"))()
 Window = Fluent:CreateWindow({
     Title = "HBelz Hub-Blox Fruits",
     SubTitle="| HieuYeager", 
     TabWidth=155, 
-    Theme="HiruTheme",
+    Theme="Darker",
     Acrylic=false,
     Size=UDim2.fromOffset(555, 320), 
     MinimizeKey = Enum.KeyCode.LeftControl
