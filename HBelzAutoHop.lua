@@ -1341,7 +1341,7 @@ local Window = Fluent:CreateWindow({
     TabWidth = 160,
     Size = UDim2.fromOffset(430, 250),
     Acrylic = true,
-    Theme = "Darker",
+    Theme = SetTheme,
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
 local Tabs = {
@@ -2071,7 +2071,7 @@ local ThemeUi = InterSec:AddDropdown("ThemeSetting", {
     Multi = false,
     Default = 1,
     Callback = function(v)
-    Window:SetTheme(v)
+    SetTheme = v
     end
 })
 InterSec:AddToggle("Transparency", 
