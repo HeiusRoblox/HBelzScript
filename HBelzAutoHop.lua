@@ -1341,14 +1341,13 @@ local Window = Fluent:CreateWindow({
     TabWidth = 160,
     Size = UDim2.fromOffset(430, 250),
     Acrylic = true,
-    Theme = SetTheme,
+    Theme = "Darker"
     MinimizeKey = Enum.KeyCode.LeftControl 
 })
 local Tabs = {
 	Info = Window:AddTab({ Title = "Tab Infomantion", Icon = "" }),
 	Shop = Window:AddTab({ Title = "Tab Shop", Icon = "" }),
 	Status = Window:AddTab({ Title = "Tab Status And Server", Icon = "" }),
-	Ui = Window:AddTab({ Title = "Tab Config Ui", Icon = "" }),
 	Main = Window:AddTab({ Title = "Tab Auto Hop & Button Hop", Icon = "" }),
 	Setting = Window:AddTab({ Title = "Tab Setting Farm", Icon = "" }),
 	Farm = Window:AddTab({ Title = "Tab Attack & Get Items", Icon = "" }),
@@ -2062,60 +2061,6 @@ function Hop()
     end
     Teleport()
 end
---- Tab Config Ui
-local InterSec = Tabs.Ui:AddSection("Interface")
-local ThemeUi = InterSec:AddDropdown("ThemeSetting", {
-    Title = "Theme",
-    Description = "",
-    Values = {"Dark", "Darker", "Light", "Aqua", "Rose", "Amethyst"},
-    Multi = false,
-    Default = 1,
-    Callback = function(v)
-    SetTheme = v
-    end
-})
-InterSec:AddToggle("Transparency", 
-{
-    Title = "Transparency", 
-    Description = "Makes the interface transparent",
-    Default = true,
-    Callback = function(v)
-    Window:SetTransparency(v)
-    end
-})
-InterSec:AddKeybind({
-    Title = "Minimize Bind",
-    Mode = "",
-    Default = Enum.KeyCode.LeftControl,
-    Callback = function(key)
-        Window:SetMinimizeKey(key)
-    end
-})
-local ConfigSec = Tabs.Ui:AddSection("Configuration")
-local configList = Fluent:GetConfigs()
-
-ConfigSec:AddDropdown({
-    Title = "Select Config",
-    Values = configList,
-    Default = 1,
-    Callback = function(name)
-        Fluent:LoadConfig(name)
-    end
-})
-
-ConfigSec:AddButton({
-    Title = "Save Configuration",
-    Callback = function()
-        Fluent:SaveConfig("MyConfig")
-    end
-})
-
-ConfigSec:AddButton({
-    Title = "Delete Configuration",
-    Callback = function()
-        Fluent:DeleteConfig("MyConfig")
-    end
-})
 -- Tab Hop
 Tabs.Main:AddParagraph({
 	Title = "---------- Auto Hop ----------",
